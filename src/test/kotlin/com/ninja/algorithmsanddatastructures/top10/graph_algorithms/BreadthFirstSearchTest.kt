@@ -4,8 +4,9 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
 
-class MyBreadthFirstSearchTest {
+class BreadthFirstSearchTest {
     private val myBreadthFirstSearch = MyBreadthFirstSearch()
+    private val breadthFirstSearch = BreadthFirstSearch()
 
     @Test
     fun test() {
@@ -19,7 +20,7 @@ class MyBreadthFirstSearchTest {
         node1.links = listOf(node2)
         node3.links = listOf(node3)
 
-        myBreadthFirstSearch.traversal(node2)
+        myBreadthFirstSearch.traversal3(node2)
 
         assertAll(
                 { assertThat(node0.visited).isTrue() },
@@ -27,5 +28,10 @@ class MyBreadthFirstSearchTest {
                 { assertThat(node2.visited).isTrue() },
                 { assertThat(node3.visited).isTrue() }
         )
+    }
+
+    //@Test
+    fun test2() {
+        breadthFirstSearch.run()
     }
 }
