@@ -20,4 +20,9 @@ class OverlappingExampleTest {
     fun tabulation() {
         assertThat(overlappingExample.fibonacciTabulation(20)).isEqualTo(6765)
     }
+
+    @Test
+    fun tailCall() {
+        assertThat(overlappingExample.fibonacciTailCall(20)).isEqualTo(6765)
+    }
 }

@@ -1,5 +1,9 @@
 package com.ninja.algorithmsanddatastructures.top10.dynamic_programming
 
+import java.util.stream.Stream
+
+
+
 /**
  * https://www.geeksforgeeks.org/overlapping-subproblems-property-in-dynamic-programming-dp-1/
  * Same computing should be avoided.
@@ -39,7 +43,7 @@ class OverlappingExample {
      * this is bottom up structure.
      */
     fun fibonacciTabulation(n: Int): Int {
-        var tab = mutableMapOf<Int, Int>()
+        val tab = mutableMapOf<Int, Int>()
 
         tab[0] = 0
         tab[1] = 1
@@ -47,5 +51,57 @@ class OverlappingExample {
             tab[i] = tab[i-1]!! + tab[i-2]!!
 
         return tab[n]!!
+    }
+
+
+    /**
+     * No recursive
+     */
+    private val tailCallImpl = TailCallImpl()
+
+    fun fibonacciTailCall(n: Int): Int = tailCall(n, 1, 0).call()
+
+    private fun tailCall(n1: Int, n2: Int, n3: Int): TailCall =
+            when {
+                n1 <= 0 -> tailCallImpl.complete(0)
+                n1 == 1 -> tailCallImpl.complete(n2)
+                else -> tailCallImpl.nextCall(tailCall(n1 - 1, n2 + n3, n2))
+            }
+}
+
+@FunctionalInterface
+interface TailCall {
+
+    fun apply(): TailCall
+
+    val isComplete: Boolean
+        get() = false
+
+    val result: Int
+        get() = throw RuntimeException("Not implemented.")
+
+    fun call(): Int = Stream.iterate(this, TailCall::apply)
+            .filter(TailCall::isComplete)
+            .findFirst()
+            .orElseThrow { RuntimeException("Unreachable") }
+            .result
+}
+
+class TailCallImpl {
+    fun nextCall(function: TailCall): TailCall = function
+
+    fun complete(value: Int): TailCall {
+        return object : TailCall {
+
+            override fun apply(): TailCall {
+                throw RuntimeException("Not implemented.")
+            }
+
+            override val isComplete: Boolean
+                get() = true
+
+            override val result: Int
+                get() = value
+        }
     }
 }
