@@ -32,6 +32,13 @@ class LongestIncreasingSubSequenceTest {
     fun test4() {
         val result = longestIncreasingSubSequence.run2(arrayOf(50, 3, 10, 7, 8, 80))
 
-        assertThat(result).isEqualTo(3)
+        assertThat(result).isEqualTo(4)
+    }
+
+    @Test
+    fun test5() {
+        val result = longestIncreasingSubSequence.ans(arrayOf(50, 3, 10, 7, 8, 80))
+
+        assertThat(result).isEqualTo(4)
     }
 }

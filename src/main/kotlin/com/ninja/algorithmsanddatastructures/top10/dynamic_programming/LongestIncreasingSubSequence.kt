@@ -31,7 +31,7 @@ class LongestIncreasingSubSequence {
     fun run2(array: Array<Int>): Int {
         val tmpResult = mutableMapOf<Int, Int>()
 
-        tmpResult[array.size - 1] = 0
+        tmpResult[array.size - 1] = 1
         for (i in array.size - 2 downTo 0) {
             val tmpAns = mutableMapOf<Int, Int>()
 
@@ -58,5 +58,21 @@ class LongestIncreasingSubSequence {
                 .sortedBy { e -> e.value }
                 .map { e -> e.value }
                 .last()
+    }
+
+
+    fun ans(array: Array<Int>): Int {
+        val lis = arrayOfNulls<Int>(array.size)
+
+        for (i in 0 until array.size)
+            lis[i] = 1
+
+        for (i in 1 until array.size)
+            for (j in 0 until i)
+                if (array[i] > array[j] && lis[i]!! < lis[j]!! + 1)
+                    lis[i] = lis[j]!! + 1
+
+        lis.sort()
+        return lis.last()!!
     }
 }
