@@ -1,5 +1,8 @@
 package com.ninja.algorithmsanddatastructures.top10.searching_and_sorting
 
+/**
+ * https://www.geeksforgeeks.org/binary-search/
+ */
 class BinarySearch {
     fun run(array: List<Int>, target: Int): Int? {
 
