@@ -1,4 +1,4 @@
-package com.ninja.algorithmsanddatastructures.leetcode
+package com.ninja.algorithmsanddatastructures.leetcode.medium
 
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/

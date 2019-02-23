@@ -1,5 +1,7 @@
-package com.ninja.algorithmsanddatastructures.leetcode
+package com.ninja.algorithmsanddatastructures.leetcode.medium
 
+import com.ninja.algorithmsanddatastructures.leetcode.medium.AddTwoNumbers
+import com.ninja.algorithmsanddatastructures.leetcode.medium.ListNode
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll

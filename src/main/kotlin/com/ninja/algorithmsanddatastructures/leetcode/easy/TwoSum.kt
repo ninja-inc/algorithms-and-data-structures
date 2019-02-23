@@ -1,4 +1,4 @@
-package com.ninja.algorithmsanddatastructures.leetcode
+package com.ninja.algorithmsanddatastructures.leetcode.easy
 
 import java.util.concurrent.atomic.AtomicInteger
 

@@ -1,5 +1,6 @@
-package com.ninja.algorithmsanddatastructures.leetcode
+package com.ninja.algorithmsanddatastructures.leetcode.easy
 
+import com.ninja.algorithmsanddatastructures.leetcode.easy.TwoSum
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
