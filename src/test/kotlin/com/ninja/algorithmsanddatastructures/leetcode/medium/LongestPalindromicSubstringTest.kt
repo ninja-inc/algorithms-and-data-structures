@@ -24,8 +24,39 @@ internal class LongestPalindromicSubstringTest {
                 .isEqualTo("geeksskeeg")
     }
 
+
+
+    @Test
+    fun test21() {
+        assertThat(logic.run2("babad"))
+                .isEqualTo("bab")
+    }
+
+    @Test
+    fun test22() {
+        assertThat(logic.run2("cbbd"))
+                .isEqualTo("bb")
+    }
+
+    @Test
+    fun test23() {
+        assertThat(logic.run2("forgeeksskeegfor"))
+                .isEqualTo("geeksskeeg")
+    }
+
+
     @Test
     fun test11() {
         assertThat(logic.palindromic("bab")).isTrue()
+    }
+
+    @Test
+    fun test111() {
+        assertThat(logic.palindromic("a")).isTrue()
+    }
+
+    @Test
+    fun test1111() {
+        assertThat("babad"[0] == "babad"[2]).isTrue()
     }
 }
