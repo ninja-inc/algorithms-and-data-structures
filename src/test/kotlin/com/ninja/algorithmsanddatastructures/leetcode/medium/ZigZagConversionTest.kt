@@ -17,4 +17,16 @@ internal class ZigZagConversionTest {
         assertThat(zigZagConversion.run("PAYPALISHIRING", 4))
                 .isEqualTo("PINALSIGYAHRPI")
     }
+
+    @Test
+    fun test21() {
+        assertThat(zigZagConversion.sol1("PAYPALISHIRING", 3))
+                .isEqualTo("PAHNAPLSIIGYIR")
+    }
+
+    @Test
+    fun test22() {
+        assertThat(zigZagConversion.sol1("PAYPALISHIRING", 4))
+                .isEqualTo("PINALSIGYAHRPI")
+    }
 }

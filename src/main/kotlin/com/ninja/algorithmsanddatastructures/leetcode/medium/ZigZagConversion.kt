@@ -1,5 +1,7 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
+import java.time.LocalDate
+
 /**
  * https://leetcode.com/problems/zigzag-conversion/solution/
  */
@@ -40,4 +42,34 @@ class ZigZagConversion {
 
         return ans
     }
+
+
+    fun sol1(s: String, n: Int): String {
+        if (n == 1)
+            return s
+
+        val rows: MutableList<String> = ArrayList()
+        for (i in 0 .. Math.min(n, s.length))
+            rows.add("")
+        
+        var curRow = 0
+        var goingDown = false
+        
+        for (c in s) {
+            rows[curRow] += c.toString()
+            
+            if (curRow == 0 || curRow == n - 1)
+                goingDown = !goingDown
+
+            curRow += if (goingDown) 1 else -1
+        }
+
+        return rows.reduce { acc, s1 -> acc.plus(s1) }
+    }
 }
+
+data class Member(
+        val name: String = "NinjaCTO",
+        val age: Int = 29,
+        val birthDate: LocalDate = LocalDate.now()
+)
