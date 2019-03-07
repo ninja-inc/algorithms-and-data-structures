@@ -1,5 +1,8 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
+/**
+ * https://leetcode.com/problems/container-with-most-water/
+ */
 class ContainerWithMostWater {
     fun run(heights: List<Int>): Int {
         var ans = 0
