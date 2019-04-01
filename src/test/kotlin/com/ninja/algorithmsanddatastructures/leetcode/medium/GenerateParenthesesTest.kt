@@ -22,7 +22,14 @@ internal class GenerateParenthesesTest {
     }
 
     @Test
-    fun test00() {
-        log.info(logic.run(4).toString())
+    fun test02() {
+        assertThat(logic.run(3))
+                .containsAll(listOf(
+                        "((()))",
+                        "(()())",
+                        "(())()",
+                        "()(())",
+                        "()()()"
+                ))
     }
 }
