@@ -9,7 +9,7 @@ internal class RemoveDuplicatesFromSortedArrayTest {
 
     @Test
     fun test01() {
-        val input = arrayOf(1,1,2)
+        val input = intArrayOf(1,1,2)
         val len = logic.removeDuplicates(input)
 
         var ans = ""
@@ -24,7 +24,7 @@ internal class RemoveDuplicatesFromSortedArrayTest {
 
     @Test
     fun test02() {
-        val input = arrayOf(0,0,1,1,1,2,2,3,3,4)
+        val input = intArrayOf(0,0,1,1,1,2,2,3,3,4)
         val len = logic.removeDuplicates(input)
 
         var ans = ""
