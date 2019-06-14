@@ -49,4 +49,18 @@ class TwoSum {
 
         throw RuntimeException("answer not found")
     }
+
+
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val map = mutableMapOf<Int, Int>()
+
+        for (i in 0 until nums.size) {
+            if (map[target - nums[i]] != null)
+                return intArrayOf(i, map[target - nums[i]]!!)
+
+            map[nums[i]] = i
+        }
+
+        throw RuntimeException("answer not found")
+    }
 }
