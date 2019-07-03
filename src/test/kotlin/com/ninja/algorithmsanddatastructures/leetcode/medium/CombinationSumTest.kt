@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
 internal class CombinationSumTest {
-    val logic = CombinationSum()
+    val logic = CombinationSum2()
 
     @Test
     fun test01() {

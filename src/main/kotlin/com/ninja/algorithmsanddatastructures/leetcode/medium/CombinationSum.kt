@@ -3,6 +3,32 @@ package com.ninja.algorithmsanddatastructures.leetcode.medium
 /**
  * https://leetcode.com/problems/combination-sum/
  */
+class CombinationSum2 {
+    fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
+        val ans = mutableListOf<List<Int>>()
+
+        calc(candidates.toList(), target, mutableListOf(), ans)
+
+        return ans.map { it.sorted() }
+            .distinct()
+    }
+
+    private fun calc(candidates: List<Int>, target: Int, tmp: MutableList<Int>, ans: MutableList<List<Int>>) {
+        val sum = tmp.sum()
+        if (sum == target)
+            ans.add(ArrayList(tmp))
+        else if (sum > target)
+            return
+        else {
+            for (i in 0 until candidates.size) {
+                tmp.add(candidates[i])
+                calc(candidates, target, tmp, ans)
+                tmp.removeAt(tmp.size - 1)
+            }
+        }
+    }
+}
+
 class CombinationSum {
     fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
         val ans = mutableListOf<List<Int>>()
