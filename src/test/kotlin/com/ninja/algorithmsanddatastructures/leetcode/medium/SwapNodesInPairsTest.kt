@@ -1,7 +1,6 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class SwapNodesInPairsTest {
@@ -18,10 +17,10 @@ internal class SwapNodesInPairsTest {
         n2.linkNext(n3)
         n3.linkNext(n4)
 
-        var tmp = logic.run(n1)
+        var tmp = logic.swapPairs(n1)
         var ans = ""
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp!!.`val`.toString()
             if (tmp.next == null)
                 break
 

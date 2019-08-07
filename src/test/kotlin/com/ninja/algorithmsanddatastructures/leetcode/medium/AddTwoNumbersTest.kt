@@ -1,7 +1,5 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
-import com.ninja.algorithmsanddatastructures.leetcode.medium.AddTwoNumbers
-import com.ninja.algorithmsanddatastructures.leetcode.medium.ListNode
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertAll
@@ -29,10 +27,10 @@ class AddTwoNumbersTest {
         val result = addTwoNumbers.run2(node2, node5)
 
         assertAll(
-                { assertThat(result.value).isEqualTo(7) },
-                { assertThat(result.next!!.value).isEqualTo(0) },
-                { assertThat(result.next!!.next!!.value).isEqualTo(8) },
-                { assertThat(result.next!!.next!!.next).isNull() }
+                { assertThat(result!!.`val`).isEqualTo(7) },
+                { assertThat(result!!.next!!.`val`).isEqualTo(0) },
+                { assertThat(result!!.next!!.next!!.`val`).isEqualTo(8) },
+                { assertThat(result!!.next!!.next!!.next).isNull() }
         )
     }
 }

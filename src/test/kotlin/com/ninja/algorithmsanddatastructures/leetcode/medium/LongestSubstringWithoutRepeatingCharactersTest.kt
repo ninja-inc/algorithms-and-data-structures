@@ -8,6 +8,33 @@ class LongestSubstringWithoutRepeatingCharactersTest {
     private val ls = LongestSubstringWithoutRepeatingCharacters()
 
     @Test
+    fun test111() {
+        assertThat(" ".length).isEqualTo(1)
+    }
+
+    @Test
+    fun test00() {
+        assertThat(ls.lengthOfLongestSubstring("abcabcbb")).isEqualTo(3)
+    }
+
+    @Test
+    fun test01() {
+        assertThat(ls.lengthOfLongestSubstring("bbbbb")).isEqualTo(1)
+    }
+
+    @Test
+    fun test02() {
+        assertThat(ls.lengthOfLongestSubstring("pwwkew")).isEqualTo(3)
+    }
+
+    @Test
+    fun test03() {
+        assertThat(ls.lengthOfLongestSubstring("anviaj")).isEqualTo(5)
+    }
+
+
+    /*
+    @Test
     fun test1() {
         assertThat(ls.run("abcabcbb")).isEqualTo("abc")
     }
@@ -39,4 +66,5 @@ class LongestSubstringWithoutRepeatingCharactersTest {
         // wke is also answer
         assertThat(ls.slidingWindow("pwwkew")).isEqualTo(3)
     }
+    */
 }

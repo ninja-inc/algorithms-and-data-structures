@@ -2,7 +2,6 @@ package com.ninja.algorithmsanddatastructures.leetcode.hard
 
 import com.ninja.algorithmsanddatastructures.leetcode.medium.ListNode
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class MergeKSortedListsTest {
@@ -33,7 +32,7 @@ internal class MergeKSortedListsTest {
         var tmp = logic.run(listOf(n11, n21, n31))
         var ans = ""
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 

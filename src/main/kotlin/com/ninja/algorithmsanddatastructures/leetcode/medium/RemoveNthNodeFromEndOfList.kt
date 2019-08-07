@@ -9,7 +9,7 @@ class RemoveNthNodeFromEndOfList {
     fun run(head: ListNode, n: Int): ListNode {
         var queue: Deque<ListNode> = LinkedList()
 
-        var ans = ListNode(head.value)
+        var ans = ListNode(head.`val`)
         var ansTmp = ans
         var tmp: ListNode = head.next!!
 
@@ -24,7 +24,7 @@ class RemoveNthNodeFromEndOfList {
                 tmp = tmp.next!!
 
                 if (queue.size == n) {
-                    ansTmp.next = ListNode(queue.pollLast().value)
+                    ansTmp.next = ListNode(queue.pollLast().`val`)
                     ansTmp = ansTmp.next!!
                 }
             }
@@ -34,7 +34,7 @@ class RemoveNthNodeFromEndOfList {
             if (i == 0) {
                 queue.pollLast()
             } else {
-                ansTmp.next = ListNode(queue.pollLast().value)
+                ansTmp.next = ListNode(queue.pollLast().`val`)
                 ansTmp = ansTmp.next!!
             }
         }

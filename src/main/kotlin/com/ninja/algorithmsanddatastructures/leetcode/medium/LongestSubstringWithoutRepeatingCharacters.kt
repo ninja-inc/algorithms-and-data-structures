@@ -1,9 +1,67 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
+import kotlin.math.max
+
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 class LongestSubstringWithoutRepeatingCharacters {
+    fun lengthOfLongestSubstring(s: String): Int {
+        if (s.isEmpty())
+            return 0
+
+        var ans = 1
+        val map = mutableMapOf<Char, Boolean>()
+
+        var l = 0
+        var r = 0
+        while (r < s.length) {
+            if (map[s[r]] == true) {
+                map[s[l]] = false
+                l++
+
+            } else {
+                ans = max(ans, r - l + 1)
+                map[s[r]] = true
+                r++
+            }
+        }
+
+        return ans
+    }
+
+
+    fun lengthOfLongestSubstring2(s: String): Int {
+        var ans = 0
+
+        for (l in 0 until s.length) {
+            for (r in l + 1 .. s.length) {
+                val sub = s.substring(l, r)
+                if (isNotDuplicated(sub))
+                    ans = max(ans, r - l)
+                else
+                    break
+
+            }
+        }
+
+        return ans
+    }
+
+    private fun isNotDuplicated(s: String): Boolean {
+        val map = mutableMapOf<Char, Boolean>()
+
+        for (i in 0 until s.length) {
+            if (map[s[i]] == true)
+                return false
+            else
+                map[s[i]] = true
+        }
+
+        return true
+    }
+
+
     fun run(s: String): String {
         val map = mutableMapOf<Int, String>()
 

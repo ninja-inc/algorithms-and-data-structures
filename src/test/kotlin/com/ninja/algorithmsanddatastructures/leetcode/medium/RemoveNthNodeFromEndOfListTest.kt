@@ -1,7 +1,6 @@
 package com.ninja.algorithmsanddatastructures.leetcode.medium
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class RemoveNthNodeFromEndOfListTest {
@@ -12,7 +11,7 @@ internal class RemoveNthNodeFromEndOfListTest {
         var ans = ""
         var tmp = logic.run(makeNode(), 2)
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 
@@ -29,7 +28,7 @@ internal class RemoveNthNodeFromEndOfListTest {
         var ans = ""
         var tmp = logic.twoPointers(makeNode(), 2)
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 

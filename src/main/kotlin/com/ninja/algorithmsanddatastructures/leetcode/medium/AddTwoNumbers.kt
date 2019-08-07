@@ -7,7 +7,7 @@ class AddTwoNumbers {
     var isUp = false
 
     fun run(l1: ListNode, l2: ListNode): ListNode {
-        var tmp = l1.value + l2.value
+        var tmp = l1.`val` + l2.`val`
 
         if (isUp) {
             tmp += 1
@@ -27,7 +27,7 @@ class AddTwoNumbers {
     }
 
     // without recursion
-    fun run2(l1: ListNode, l2: ListNode): ListNode {
+    fun run2(l1: ListNode?, l2: ListNode?): ListNode? {
         var ans = ListNode(0)
         var tmpAns = ans
 
@@ -35,7 +35,7 @@ class AddTwoNumbers {
         var tmp2 = l2
 
         while (true) {
-            var tmp = tmp1.value + tmp2.value
+            var tmp = tmp1!!.`val` + tmp2!!.`val`
 
             if (isUp) {
                 tmp += 1
@@ -64,11 +64,11 @@ class AddTwoNumbers {
 }
 
 class ListNode {
-    val value: Int
+    val `val`: Int
     var next: ListNode? = null
 
     constructor(value: Int) {
-        this.value = value
+        this.`val` = value
     }
 
     fun linkNext(next: ListNode) {

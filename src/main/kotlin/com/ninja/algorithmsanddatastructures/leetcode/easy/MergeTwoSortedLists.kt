@@ -20,7 +20,7 @@ class MergeTwoSortedLists {
                 break
             }
 
-            if (nn1!!.value < nn2!!.value) {
+            if (nn1!!.`val` < nn2!!.`val`) {
                 dummy.linkNext(nn1)
                 nn1 = nn1.next
                 if (dummy.next != null)

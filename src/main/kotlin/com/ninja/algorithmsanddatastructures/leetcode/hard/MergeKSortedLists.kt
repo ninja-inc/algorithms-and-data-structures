@@ -15,7 +15,7 @@ class MergeKSortedLists {
         while (true) {
             val minNode = nodes
                     .filter { it != null }
-                    .minBy { it!!.value }
+                    .minBy { it!!.`val` }
 
             val minIndex = nodes.indexOf(minNode)
 

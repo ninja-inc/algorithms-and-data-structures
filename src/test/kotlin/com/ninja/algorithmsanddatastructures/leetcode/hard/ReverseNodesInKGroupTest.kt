@@ -25,7 +25,7 @@ internal class ReverseNodesInKGroupTest {
         var ans = ""
 
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 
@@ -55,7 +55,7 @@ internal class ReverseNodesInKGroupTest {
         var ans = ""
 
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 

@@ -28,7 +28,7 @@ internal class MergeTwoSortedListsTest {
         var ans = ""
 
         while (true) {
-            ans += tmp.value.toString()
+            ans += tmp.`val`.toString()
             if (tmp.next == null)
                 break
 
