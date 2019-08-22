@@ -36,11 +36,33 @@ fun queensAttack(n: Int, k: Int, r_q: Int, c_q: Int, obstacles: Array<Array<Int>
     var left = 1
     var right = n
 
-    var left_down = if (r_q >= c_q) 1 else c_q - r_q
-    var right_top = (n - r_q) + c_q
+    var left_down = if (r_q >= c_q) 1 else c_q - r_q + 1
+    var right_top = if (r_q >= c_q) (n - r_q) + c_q else n
 
-    var left_top = c_q - (n - r_q)
-    var right_down = if (r_q >= c_q) n else c_q - r_q
+    var left_top = 0
+    for (i in 0 until n) {
+        if (c_q - i <= 1) {
+            left_top = 1
+            break
+        }
+        else if (r_q + i >= n) {
+            left_top = c_q - i
+            break
+        }
+    }
+
+    var right_down = 0
+    for (i in 0 until n) {
+        if (c_q - i <= 1) {
+            right_down = r_q + i
+            break
+        }
+        else if (r_q + i >= n) {
+            right_down = n
+            break
+        }
+    }
+
     for (obstacle in obstacles) {
         // vertical
         if (c_q == obstacle[1]) {
@@ -66,9 +88,9 @@ fun queensAttack(n: Int, k: Int, r_q: Int, c_q: Int, obstacles: Array<Array<Int>
         // left-top to right-down
         else if (((c_q - obstacle[1])/(r_q - obstacle[0])) == -1) {
             if (c_q < obstacle[1])
-                right_down = Math.max(right_down, obstacle[1] - 1)
+                right_down = Math.min(right_down, obstacle[1] - 1)
             else
-                left_top = Math.min(left_top, obstacle[1] + 1)
+                left_top = Math.max(left_top, obstacle[1] + 1)
         }
     }
     ans += (top - down) + (right - left) + (right_top - left_down) + (right_down - left_top)

@@ -31,4 +31,64 @@ internal class QueensAttack2KtTest {
         )
         assertThat(ans).isEqualTo(9)
     }
+
+    @Test
+    fun test02_1() {
+        val ans = queensAttack(
+            n=5,
+            k=0,
+            r_q=3,
+            c_q=2,
+            obstacles = arrayOf()
+        )
+        assertThat(ans).isEqualTo(14)
+    }
+
+    @Test
+    fun test02_2() {
+        val ans = queensAttack(
+            n=5,
+            k=0,
+            r_q=2,
+            c_q=3,
+            obstacles = arrayOf()
+        )
+        assertThat(ans).isEqualTo(14)
+    }
+
+    @Test
+    fun test02_3() {
+        val ans = queensAttack(
+            n=5,
+            k=0,
+            r_q=4,
+            c_q=3,
+            obstacles = arrayOf()
+        )
+        assertThat(ans).isEqualTo(14)
+    }
+
+    @Test
+    fun test02_4() {
+        val ans = queensAttack(
+            n=5,
+            k=0,
+            r_q=3,
+            c_q=4,
+            obstacles = arrayOf()
+        )
+        assertThat(ans).isEqualTo(14)
+    }
+
+    @Test
+    fun test03() {
+        val ans = queensAttack(
+            n=100000,
+            k=0,
+            r_q=4187,
+            c_q=5068,
+            obstacles = arrayOf()
+        )
+        assertThat(ans).isEqualTo(308369)
+    }
 }
