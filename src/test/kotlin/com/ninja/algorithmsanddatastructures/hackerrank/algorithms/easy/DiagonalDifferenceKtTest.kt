@@ -1,6 +1,5 @@
-package com.ninja.algorithmsanddatastructures.hackerrank.easy
+package com.ninja.algorithmsanddatastructures.hackerrank.algorithms.easy
 
-import com.ninja.algorithmsanddatastructures.hackerrank.easy.diagonalDifference
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

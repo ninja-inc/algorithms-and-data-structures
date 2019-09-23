@@ -1,4 +1,4 @@
-package com.ninja.algorithmsanddatastructures.hackerrank.easy
+package com.ninja.algorithmsanddatastructures.hackerrank.algorithms.easy
 
 import kotlin.collections.*
 import kotlin.io.*

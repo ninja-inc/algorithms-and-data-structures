@@ -1,22 +1,8 @@
-package com.ninja.algorithmsanddatastructures.hackerrank.medium
+package com.ninja.algorithmsanddatastructures.hackerrank.algorithms.medium
 
-import java.io.*
-import java.math.*
-import java.security.*
-import java.text.*
 import java.util.*
-import java.util.concurrent.*
-import java.util.function.*
-import java.util.regex.*
-import java.util.stream.*
 import kotlin.collections.*
-import kotlin.comparisons.*
 import kotlin.io.*
-import kotlin.jvm.*
-import kotlin.jvm.functions.*
-import kotlin.jvm.internal.*
-import kotlin.ranges.*
-import kotlin.sequences.*
 import kotlin.text.*
 
 // Complete the biggerIsGreater function below.
@@ -66,6 +52,7 @@ fun traversal(usedIndices: MutableList<Int>, chars: List<Char>, tmp: MutableList
     }
 }
 
+// https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
 fun biggerIsGreater(w: String): String {
     val array = w.toCharArray()
 
